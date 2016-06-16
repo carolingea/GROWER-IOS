@@ -20,6 +20,10 @@
 		9621274F1D092BF20059E561 /* VCinsightsDescripcion.m in Sources */ = {isa = PBXBuildFile; fileRef = 9621274E1D092BF20059E561 /* VCinsightsDescripcion.m */; };
 		96285DAE1D0F81EC009BAAB7 /* VCmeetUpsContenidos.m in Sources */ = {isa = PBXBuildFile; fileRef = 96285DAD1D0F81EC009BAAB7 /* VCmeetUpsContenidos.m */; };
 		96285DB11D0FAADF009BAAB7 /* celdaMeetContenidos.m in Sources */ = {isa = PBXBuildFile; fileRef = 96285DB01D0FAADF009BAAB7 /* celdaMeetContenidos.m */; };
+		9629A8FC1D12E63E005AA92B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9629A8FB1D12E63E005AA92B /* MessageUI.framework */; };
+		962C10701D10F2C900EE4ABB /* fondo_barra.png in Resources */ = {isa = PBXBuildFile; fileRef = 962C106F1D10F2C900EE4ABB /* fondo_barra.png */; };
+		962C10731D1100D500EE4ABB /* VCqueEsGrower.m in Sources */ = {isa = PBXBuildFile; fileRef = 962C10721D1100D500EE4ABB /* VCqueEsGrower.m */; };
+		962C10761D11010600EE4ABB /* VCperfil.m in Sources */ = {isa = PBXBuildFile; fileRef = 962C10751D11010600EE4ABB /* VCperfil.m */; };
 		963B7F871CFFC83F004DA987 /* Conexion.m in Sources */ = {isa = PBXBuildFile; fileRef = 963B7F861CFFC83F004DA987 /* Conexion.m */; };
 		9642C1191CFB76E000D80910 /* VClogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 9642C1181CFB76E000D80910 /* VClogin.m */; };
 		965E7D2E1D07EB2100B9D0F2 /* VCmenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 965E7D2D1D07EB2100B9D0F2 /* VCmenu.m */; };
@@ -111,6 +115,12 @@
 		96285DAD1D0F81EC009BAAB7 /* VCmeetUpsContenidos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCmeetUpsContenidos.m; sourceTree = "<group>"; };
 		96285DAF1D0FAADF009BAAB7 /* celdaMeetContenidos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = celdaMeetContenidos.h; sourceTree = "<group>"; };
 		96285DB01D0FAADF009BAAB7 /* celdaMeetContenidos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = celdaMeetContenidos.m; sourceTree = "<group>"; };
+		9629A8FB1D12E63E005AA92B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		962C106F1D10F2C900EE4ABB /* fondo_barra.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fondo_barra.png; sourceTree = "<group>"; };
+		962C10711D1100D500EE4ABB /* VCqueEsGrower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCqueEsGrower.h; sourceTree = "<group>"; };
+		962C10721D1100D500EE4ABB /* VCqueEsGrower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCqueEsGrower.m; sourceTree = "<group>"; };
+		962C10741D11010600EE4ABB /* VCperfil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCperfil.h; sourceTree = "<group>"; };
+		962C10751D11010600EE4ABB /* VCperfil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCperfil.m; sourceTree = "<group>"; };
 		963B7F851CFFC83F004DA987 /* Conexion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conexion.h; sourceTree = "<group>"; };
 		963B7F861CFFC83F004DA987 /* Conexion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conexion.m; sourceTree = "<group>"; };
 		9642C1171CFB76E000D80910 /* VClogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VClogin.h; sourceTree = "<group>"; };
@@ -190,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9629A8FC1D12E63E005AA92B /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +232,7 @@
 		962FDA8E1CF5785200AD4205 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				962C106F1D10F2C900EE4ABB /* fondo_barra.png */,
 				96A346611D0E34ED00C54D67 /* close7.png */,
 				96A346621D0E34ED00C54D67 /* close8.png */,
 				96A346631D0E34ED00C54D67 /* close1.png */,
@@ -293,6 +305,7 @@
 				961F5EE31D064D2B008E1373 /* VCregistrar.m */,
 				965E7D2C1D07EB2100B9D0F2 /* VCmenu.h */,
 				965E7D2D1D07EB2100B9D0F2 /* VCmenu.m */,
+				9621274A1D092B650059E561 /* VCterminos.h */,
 				9621273E1D0929DC0059E561 /* VCmeetUps.h */,
 				9621273F1D0929DC0059E561 /* VCmeetUps.m */,
 				962127411D092A180059E561 /* VCinsightsUp.h */,
@@ -301,7 +314,6 @@
 				962127451D092A4F0059E561 /* VCaliados.m */,
 				962127471D092A7D0059E561 /* VCfeedbacks.h */,
 				962127481D092A7D0059E561 /* VCfeedbacks.m */,
-				9621274A1D092B650059E561 /* VCterminos.h */,
 				9621274B1D092B650059E561 /* VCterminos.m */,
 				9621274D1D092BF20059E561 /* VCinsightsDescripcion.h */,
 				9621274E1D092BF20059E561 /* VCinsightsDescripcion.m */,
@@ -309,6 +321,10 @@
 				96B98E7C1D0E0EC0007DB674 /* VCvermeet.m */,
 				96285DAC1D0F81EC009BAAB7 /* VCmeetUpsContenidos.h */,
 				96285DAD1D0F81EC009BAAB7 /* VCmeetUpsContenidos.m */,
+				962C10711D1100D500EE4ABB /* VCqueEsGrower.h */,
+				962C10721D1100D500EE4ABB /* VCqueEsGrower.m */,
+				962C10741D11010600EE4ABB /* VCperfil.h */,
+				962C10751D11010600EE4ABB /* VCperfil.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -316,6 +332,7 @@
 		9675A5151CF41A1E00937DFF = {
 			isa = PBXGroup;
 			children = (
+				9629A8FB1D12E63E005AA92B /* MessageUI.framework */,
 				9675A5201CF41A1E00937DFF /* Crower */,
 				9675A51F1CF41A1E00937DFF /* Products */,
 			);
@@ -423,6 +440,7 @@
 				9699AAB91CF7EDE300E67C7F /* txtcorreo.jpg in Resources */,
 				9699AAAB1CF7EDE300E67C7F /* minilapiz.png in Resources */,
 				9699AA941CF7EDE300E67C7F /* btncancelar_texto.png in Resources */,
+				962C10701D10F2C900EE4ABB /* fondo_barra.png in Resources */,
 				9699AAA31CF7EDE300E67C7F /* hecho_con_amor.png in Resources */,
 				9699AAA71CF7EDE300E67C7F /* menu_hover.jpg in Resources */,
 				9699AA9A1CF7EDE300E67C7F /* btnmas.png in Resources */,
@@ -479,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				962127461D092A4F0059E561 /* VCaliados.m in Sources */,
+				962C10731D1100D500EE4ABB /* VCqueEsGrower.m in Sources */,
 				961F5EE11D064D0D008E1373 /* VCrecordar.m in Sources */,
 				9620AF821D05118D0016AB69 /* VCinicial.m in Sources */,
 				9675A5291CF41A1E00937DFF /* VCslider.m in Sources */,
@@ -491,6 +510,7 @@
 				96285DAE1D0F81EC009BAAB7 /* VCmeetUpsContenidos.m in Sources */,
 				967A90201D0693D400495A4B /* Utilerias.m in Sources */,
 				965E7D2E1D07EB2100B9D0F2 /* VCmenu.m in Sources */,
+				962C10761D11010600EE4ABB /* VCperfil.m in Sources */,
 				96B98E7D1D0E0EC0007DB674 /* VCvermeet.m in Sources */,
 				962127431D092A180059E561 /* VCinsightsUp.m in Sources */,
 				963B7F871CFFC83F004DA987 /* Conexion.m in Sources */,

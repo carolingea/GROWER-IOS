@@ -4,8 +4,10 @@
 {
     //http://45.56.120.97/php/io/Usuarios.php?op=registrar&usuario=carolingea&password=asdf1234
     //http://45.56.120.97/php/io/Usuarios.php?op=verificar&usuario=carolingea&password=asdf1234
+    
 }
 
+@synthesize MiUrlBase;
 NSURL * URL;
 NSMutableURLRequest * REQUEST;
 NSURLSession * SESION;
@@ -13,10 +15,14 @@ NSURLSessionTask * TAREA;
 NSString * URLbase;
 NSDictionary * result;
 
+
 + (void)initialize
 {
     if (self == [Conexion class]) {
-        URLbase = @"http://45.56.120.97/php/io";
+        NSDictionary * info = [[NSBundle mainBundle]infoDictionary];
+        //URLbase = @"http://45.56.120.97/php/io";
+        URLbase = info[@"URL"];
+        
     }
 }
 
@@ -33,7 +39,9 @@ NSDictionary * result;
     [self iniciar:PAGINA PARAMETROS:PARAMS];
     TAREA = [SESION dataTaskWithRequest:REQUEST completionHandler:CallBack];
     [TAREA resume];
+ 
 }
+
 
 -(NSDictionary*)conectar: (NSString*)PAGINA PARAMETROS:(NSString*)PARAMS
 {
@@ -51,8 +59,5 @@ NSDictionary * result;
 }
 
 
-
-
-//dispatch_async(dispatch_get_main_queue(), ^{
 
 @end

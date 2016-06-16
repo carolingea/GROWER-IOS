@@ -25,6 +25,7 @@ Conexion * Conex;
     NSMutableArray * ArrID;
     NSMutableArray * ArrDescripcion;
     NSDictionary * Contenidos;
+    NSDictionary * info;
 }
 
 - (void)viewDidLoad {
@@ -32,13 +33,17 @@ Conexion * Conex;
     Util = [[Utilerias alloc]init];
     Conex = [[Conexion alloc]init];
     
+    info = [[NSBundle mainBundle]infoDictionary];
+    
     _lblTituloCat.text = _Titulo;
 
     //--- Cargar Loading ---------
     [_loading startAnimating];
     
     //--- Cargar imagen ----------
-    _imgHeader.image = [Util DescargarImagen: [NSString stringWithFormat:@"http://45.56.120.97/php/io/img/categorias/%@", _Imagen]];
+    //_imgHeader.image = [Util DescargarImagen: [NSString stringWithFormat:@"http://45.56.120.97/php/io/img/categorias/%@", _Imagen]];
+    
+    _imgHeader.image = [Util DescargarImagen: [NSString stringWithFormat:@"%@%@%@",info[@"URL"], info[@"URLcategorias"],_Imagen]];
     
     //---- Cargar Colección --------
     [Conex conectar:@"Contenidos.php" PARAMETROS:[NSString stringWithFormat:@"Id_categoria=%@", _ID] CALLBACK:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -78,7 +83,9 @@ Conexion * Conex;
 {
     Celda = [collectionView dequeueReusableCellWithReuseIdentifier:@"celda" forIndexPath:indexPath];
     Celda.lblTituloContenido.text = ArrTitulo[indexPath.row];
-    Celda.imgContenido.image = [Util DescargarImagen:[NSString stringWithFormat:@"http://45.56.120.97/php/io/img/contenidos/mini/%@", ArrImagenes[indexPath.row]]];
+    //Celda.imgContenido.image = [Util DescargarImagen:[NSString stringWithFormat:@"http://45.56.120.97/php/io/img/contenidos/mini/%@", ArrImagenes[indexPath.row]]];
+    Celda.imgContenido.image = [Util DescargarImagen:[NSString stringWithFormat:@"%@%@%@",info[@"URL"], info[@"URLcontenidosMini"], ArrImagenes[indexPath.row]]];
+    //[Util DescargarImagen: [NSString stringWithFormat:@"%@%@%@",info[@"URL"], info[@"URLcategorias"],_Imagen]];
     [_loading stopAnimating];
     return Celda;
 }

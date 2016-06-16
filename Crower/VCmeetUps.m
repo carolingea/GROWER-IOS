@@ -16,22 +16,28 @@ VCmeetUpsContenidos * meetContenidos;
 
 
 @implementation VCmeetUps
-NSArray * Imagenes;
-NSMutableArray * Coltextos;
-NSMutableArray * ColImagenes;
-NSMutableArray * ColID;
+    NSArray * Imagenes;
+    NSMutableArray * Coltextos;
+    NSMutableArray * ColImagenes;
+    NSMutableArray * ColID;
+    NSDictionary * categorias;
+    NSString * RutaCategoria;
 
-NSDictionary * categorias;
+    NSDictionary * info;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     conex = [[Conexion alloc]init];
     util = [[Utilerias alloc]init];
     
+    //---- TRAER RUTAS DE LAS CARPETAS DEL info.plist
+    
+    info = [[NSBundle mainBundle]infoDictionary];
+    
+    
     
     //----------- COLECCION DE CATEGORIAS ------------------
     [_loading startAnimating];
-    //http://45.56.120.97/php/io/Categorias.php
     [conex conectar:@"Categorias.php" PARAMETROS:@"" CALLBACK:^(NSData *data, NSURLResponse *response, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             categorias = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
@@ -43,15 +49,15 @@ NSDictionary * categorias;
             
         });
         
-        
     }];
     
     
     //-------------- SLIDER-------------------
     _ScrollSlider.delegate = self;
-    
+    NSLog(@"%@",RutaCategoria);
     //---------Traer datos servicio Json ---http://45.56.120.97/php/io/utilerias.php?op=LISTAR_ARCHIVOS&carpeta=img/slider
-    [conex conectar:@"utilerias.php" PARAMETROS:@"op=LISTAR_ARCHIVOS&carpeta=img/slider" CALLBACK:^(NSData *data, NSURLResponse *response, NSError *error) {
+    //[conex conectar:@"utilerias.php" PARAMETROS:@"op=LISTAR_ARCHIVOS&carpeta=img/slider" CALLBACK:^(NSData *data, NSURLResponse *response, NSError *error) {
+    [conex conectar:@"utilerias.php" PARAMETROS:@"op=LISTAR_ARCHIVOS&carpeta=back/web/img/slider" CALLBACK:^(NSData *data, NSURLResponse *response, NSError *error) {
         dispatch_sync(dispatch_get_main_queue(), ^{
             __block NSDictionary * d = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             NSArray * a = (NSArray*)d;
@@ -74,7 +80,9 @@ NSDictionary * categorias;
         CGFloat Alto = _ScrollSlider.frame.size.height;
         
         UIImageView * IMAVIEW = [[UIImageView alloc]initWithFrame:CGRectMake(DX, Y, Ancho, Alto)];
-        NSString*URL = [NSString stringWithFormat:@"http://45.56.120.97/php/io/img/slider/%@", [Imagenes objectAtIndex:i]];
+        
+//        NSString*URL = [NSString stringWithFormat:@"http://45.56.120.97/php/io/img/slider/%@", [Imagenes objectAtIndex:i]];
+        NSString*URL = [NSString stringWithFormat:@"%@%@%@", info[@"URL"], info[@"URLslider"], [Imagenes objectAtIndex:i]];
         IMAVIEW.image = [util DescargarImagen:URL];
         [_ScrollSlider addSubview:IMAVIEW];
         _ScrollSlider.contentSize = CGSizeMake(Ancho * [Imagenes count], Alto);
@@ -99,7 +107,8 @@ NSDictionary * categorias;
 {
     Cel  = [collectionView dequeueReusableCellWithReuseIdentifier:@"micelda" forIndexPath:indexPath];
     Cel.lblTitulo.text = Coltextos[indexPath.row];
-    NSString * rutaimagen =[NSString stringWithFormat:@"http://45.56.120.97/php/io/img/categorias/mini/%@", ColImagenes[indexPath.row]];
+    //NSString * rutaimagen =[NSString stringWithFormat:@"http://45.56.120.97/php/io/img/categorias/mini/%@", ColImagenes[indexPath.row]];
+    NSString * rutaimagen = [NSString stringWithFormat:@"%@%@%@", info[@"URL"], info[@"URLcategoriasMini"], ColImagenes[indexPath.row]];
     Cel.imgMiniatura.image = [util DescargarImagen:rutaimagen];
     [_loading stopAnimating];
     return Cel;

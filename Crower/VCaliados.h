@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface VCaliados : UIViewController
+- (IBAction)btnCerrar:(id)sender;
 
 @end

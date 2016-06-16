@@ -1,16 +1,19 @@
+//  VCqueEsGrower.m
+//  Crower
+//  Created by Carolina Delgado on 14/06/16.
 
 
-#import "VCaliados.h"
+#import "VCqueEsGrower.h"
 
-@interface VCaliados ()
+@interface VCqueEsGrower ()
 
 @end
 
-@implementation VCaliados
+@implementation VCqueEsGrower
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
 
 

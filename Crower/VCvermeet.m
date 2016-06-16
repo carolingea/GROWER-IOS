@@ -12,6 +12,7 @@
 {
     Conexion * Conex;
     Utilerias * Util;
+    NSDictionary * info;
 }
 
 
@@ -21,12 +22,15 @@
     Conex = [[Conexion alloc]init];
     Util = [[Utilerias alloc]init];
     
+    info = [[NSBundle mainBundle]infoDictionary];
+    
     _lblTitulo.text = _Titulo;
     
     
     //----- Cargar imagen header ------
     dispatch_async(dispatch_get_main_queue(), ^{
-    _imgHeader.image = [Util DescargarImagen: [NSString stringWithFormat: @"http://45.56.120.97/php/io/img/contenidos/%@", _Imagen]];
+    //_imgHeader.image = [Util DescargarImagen: [NSString stringWithFormat: @"http://45.56.120.97/php/io/img/contenidos/%@", _Imagen]];
+    _imgHeader.image = [Util DescargarImagen: [NSString stringWithFormat:@"%@%@%@",info[@"URL"], info[@"URLcontenidos"], _Imagen]];
     });
     
     //---- Cargar contenido -----------
