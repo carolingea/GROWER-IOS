@@ -110,11 +110,6 @@
 }
 
 - (IBAction)btnRegistrar:(id)sender {
-    /*
-    NSString * Parametros = [NSString stringWithFormat:@"op=verificar&usuario=%@&password=%@", _txtUsuario.text, _txtPassword.text];
-    NSDictionary * r = [conex conectar:@"Usuarios.php" PARAMETROS:Parametros];
-    NSLog(@"%@",r);
-    */
     registrar = [self.storyboard instantiateViewControllerWithIdentifier:@"registrarse"];
     [self showViewController:registrar sender:nil];
 }
