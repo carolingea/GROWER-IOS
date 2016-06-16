@@ -45,7 +45,8 @@
 - (IBAction)btnFeedback:(id)sender {
     VCfeedbacks * feedbacks = [[VCfeedbacks alloc]init];
     feedbacks = [self.storyboard instantiateViewControllerWithIdentifier:@"vcfeedbacks"];
-    [self presentViewController:feedbacks animated:YES completion:nil];
+    [self showViewController:feedbacks sender:nil];
+    //[self presentViewController:feedbacks animated:YES completion:nil];
 }
 
 - (IBAction)btnTerminosCondiciones:(id)sender {

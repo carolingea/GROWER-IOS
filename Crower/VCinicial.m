@@ -1,14 +1,18 @@
 
 #import "VCinicial.h"
+#import "VCmeetUps.h"
 
 @interface VCinicial ()
 
 @end
 
-@implementation VCinicial
+@implementation VCinicial{
+    VCmeetUps * meets;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
 }
 
@@ -18,6 +22,8 @@
 }
 
 - (IBAction)btnInsightMeetUps:(id)sender {
-    NSLog(@"Insight");
+    meets = [self.storyboard instantiateViewControllerWithIdentifier:@"meetups"];
+    [self showViewController:meets sender:nil];
+    
 }
 @end

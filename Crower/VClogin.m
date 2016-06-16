@@ -72,27 +72,33 @@
 
 - (IBAction)btnIngresar:(id)sender {
     
-    NSString * Parametros = [NSString stringWithFormat:@"op=verificar&usuario=%@&password=%@", _txtUsuario.text, _txtPassword.text];
-    [conex conectar:@"Usuarios.php" PARAMETROS:Parametros CALLBACK:^(NSData *data, NSURLResponse *response, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{  // Cuando termine el callback haga lo del bloque
-            NSDictionary * res = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-            if (res.count > 0) {
-                if ([[res valueForKey:@"Num"][0] intValue] > 0) {    // Si trae algo
-                    VCslider * slider = [self.storyboard instantiateViewControllerWithIdentifier:@"slider"];
-                    [self presentViewController:slider animated:YES completion:nil];
+    if (![_txtUsuario.text isEqualToString:@""] &&  ![_txtPassword.text isEqualToString:@""]) {
+        NSString * Parametros = [NSString stringWithFormat:@"op=verificar&usuario=%@&password=%@", _txtUsuario.text, _txtPassword.text];
+        [conex conectar:@"Usuarios.php" PARAMETROS:Parametros CALLBACK:^(NSData *data, NSURLResponse *response, NSError *error) {
+            dispatch_async(dispatch_get_main_queue(), ^{  // Cuando termine el callback haga lo del bloque
+                NSDictionary * res = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                if (res.count > 0) {
+                    if ([[res valueForKey:@"Num"][0] intValue] > 0) {    // Si trae algo
+                        VCslider * slider = [self.storyboard instantiateViewControllerWithIdentifier:@"slider"];
+                        [self presentViewController:slider animated:YES completion:nil];
+                    }
+                    else
+                    {
+                        UIAlertController * Alerta = [Util AlertaSimple:@"Ingreso" MENSAJE:@"Usuario o contraseña errónea"];
+                        [self presentViewController:Alerta animated:YES completion:nil];
+                        
+                    }
                 }
-                else
-                {
-                    UIAlertController * Alerta = [Util AlertaSimple:@"Ingreso" MENSAJE:@"Usuario o contraseña errónea"];
-                    [self presentViewController:Alerta animated:YES completion:nil];
-                    
-                    //[self AlertaSimple:@"Registro" MENSAJE:@"Usuario o contraseña errónea"];
-                    
-                }
-            }
-        });
-        
-    }];
+            });
+            
+        }];
+    }
+    else
+    {
+        UIAlertController * Alerta = [Util AlertaSimple:@"Ingreso" MENSAJE:@"Escriba usuario y contraseña"];
+        [self presentViewController:Alerta animated:YES completion:nil];
+    }
+    
     
 }
 
@@ -104,6 +110,14 @@
     NSString * Parametros = [NSString stringWithFormat:@"op=verificar&usuario=%@&password=%@", _txtUsuario.text, _txtPassword.text];
     NSDictionary * r = [conex conectar:@"Usuarios.php" PARAMETROS:Parametros];
     NSLog(@"%@",r);
+}
+
+- (IBAction)btnMostrarPassword:(id)sender {
+    if ([_txtPassword isSecureTextEntry])
+        _txtPassword.secureTextEntry = NO;
+    else
+        _txtPassword.secureTextEntry = YES;
+    
 }
 
 /*

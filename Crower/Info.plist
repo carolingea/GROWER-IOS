@@ -14,6 +14,8 @@
 	<string>/back/web/img/categorias/mini/</string>
 	<key>URLslider</key>
 	<string>/back/web/img/slider/</string>
+	<key>EMAILfeedback</key>
+	<string>carolina.delgado@imaginamos.com.co</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

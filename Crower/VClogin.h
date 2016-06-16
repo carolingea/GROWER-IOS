@@ -10,5 +10,6 @@
 - (IBAction)btnIngresar:(id)sender;
 - (IBAction)btnRecordar:(id)sender;
 - (IBAction)btnRegistrar:(id)sender;
+- (IBAction)btnMostrarPassword:(id)sender;
 
 @end
