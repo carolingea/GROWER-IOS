@@ -1,7 +1,10 @@
 #import "VClogin.h"
+#import "VCrecordar.h"
+#import "VCregistrar.h"
 #import "Conexion.h"
 #import "VCslider.h"
 #import "Utilerias.h"
+
 
 @interface VClogin ()
 @end
@@ -12,6 +15,8 @@
     CGFloat TecladoHeight;
     Conexion * conex;
     Utilerias * Util;
+    VCrecordar * recordar;
+    VCregistrar * registrar;
 }
 
 
@@ -22,9 +27,6 @@
     Y = _viewLogin.frame.origin.y;
     conex = [[Conexion alloc]init];
     Util = [[Utilerias alloc]init];
-    
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillChangeFrameNotification object:nil];
-
 }
 
 
@@ -103,13 +105,18 @@
 }
 
 - (IBAction)btnRecordar:(id)sender {
-    
+    recordar = [self.storyboard instantiateViewControllerWithIdentifier:@"recordar"];
+    [self showViewController:recordar sender:nil];
 }
 
 - (IBAction)btnRegistrar:(id)sender {
+    /*
     NSString * Parametros = [NSString stringWithFormat:@"op=verificar&usuario=%@&password=%@", _txtUsuario.text, _txtPassword.text];
     NSDictionary * r = [conex conectar:@"Usuarios.php" PARAMETROS:Parametros];
     NSLog(@"%@",r);
+    */
+    registrar = [self.storyboard instantiateViewControllerWithIdentifier:@"registrarse"];
+    [self showViewController:registrar sender:nil];
 }
 
 - (IBAction)btnMostrarPassword:(id)sender {
@@ -120,13 +127,5 @@
     
 }
 
-/*
--(void)AlertaSimple: (NSString *)Titulo MENSAJE: (NSString*) Mensaje
-{
-    UIAlertController *alerta = [UIAlertController alertControllerWithTitle:Titulo message:Mensaje preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction * aceptar = [UIAlertAction actionWithTitle:@"Aceptar" style:UIAlertActionStyleCancel handler:nil];
-    [alerta addAction:aceptar];
-    [self presentViewController:alerta animated:YES completion:nil];
-}
- */
+
 @end

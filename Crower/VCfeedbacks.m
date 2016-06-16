@@ -49,15 +49,12 @@
         }
         else
         {
-            NSLog(@"Alerta 1");
             UIAlertController * aler = [Util AlertaSimple:@"Mensaje" MENSAJE:@"El dispositivo no puede enviar E-mail"];
             [self presentViewController:aler animated:YES completion:nil];
-            
         }
     }
     else
     {
-        NSLog(@"Alerta 2");
         UIAlertController * aler = [Util AlertaSimple:@"Mensaje" MENSAJE:@"Debe completar todos los campos"];
         [self presentViewController:aler animated:YES completion:nil];
     }
@@ -96,7 +93,9 @@
 }
 
 
-
-
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+{
+    
+}
 
 @end
