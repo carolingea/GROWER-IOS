@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		961990041D0A616B00AE12DD /* celdaMeetups.m in Sources */ = {isa = PBXBuildFile; fileRef = 961990031D0A616B00AE12DD /* celdaMeetups.m */; };
+		961F1E3A1D14EB5E00EFCBFF /* VCidea.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F1E391D14EB5E00EFCBFF /* VCidea.m */; };
+		961F1E3C1D14F12100EFCBFF /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961F1E3B1D14F12100EFCBFF /* AVKit.framework */; };
+		961F1E3E1D14F1E000EFCBFF /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961F1E3D1D14F1E000EFCBFF /* MediaPlayer.framework */; };
 		961F5EE11D064D0D008E1373 /* VCrecordar.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F5EE01D064D0D008E1373 /* VCrecordar.m */; };
 		961F5EE41D064D2B008E1373 /* VCregistrar.m in Sources */ = {isa = PBXBuildFile; fileRef = 961F5EE31D064D2B008E1373 /* VCregistrar.m */; };
 		9620AF821D05118D0016AB69 /* VCinicial.m in Sources */ = {isa = PBXBuildFile; fileRef = 9620AF811D05118D0016AB69 /* VCinicial.m */; };
@@ -18,12 +21,14 @@
 		962127491D092A7D0059E561 /* VCfeedbacks.m in Sources */ = {isa = PBXBuildFile; fileRef = 962127481D092A7D0059E561 /* VCfeedbacks.m */; };
 		9621274C1D092B650059E561 /* VCterminos.m in Sources */ = {isa = PBXBuildFile; fileRef = 9621274B1D092B650059E561 /* VCterminos.m */; };
 		9621274F1D092BF20059E561 /* VCinsightsDescripcion.m in Sources */ = {isa = PBXBuildFile; fileRef = 9621274E1D092BF20059E561 /* VCinsightsDescripcion.m */; };
+		96251DD21D19D84E0038D2F8 /* Prueba.m in Sources */ = {isa = PBXBuildFile; fileRef = 96251DD11D19D84E0038D2F8 /* Prueba.m */; };
 		96285DAE1D0F81EC009BAAB7 /* VCmeetUpsContenidos.m in Sources */ = {isa = PBXBuildFile; fileRef = 96285DAD1D0F81EC009BAAB7 /* VCmeetUpsContenidos.m */; };
 		96285DB11D0FAADF009BAAB7 /* celdaMeetContenidos.m in Sources */ = {isa = PBXBuildFile; fileRef = 96285DB01D0FAADF009BAAB7 /* celdaMeetContenidos.m */; };
 		9629A8FC1D12E63E005AA92B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9629A8FB1D12E63E005AA92B /* MessageUI.framework */; };
 		962C10701D10F2C900EE4ABB /* fondo_barra.png in Resources */ = {isa = PBXBuildFile; fileRef = 962C106F1D10F2C900EE4ABB /* fondo_barra.png */; };
 		962C10731D1100D500EE4ABB /* VCqueEsGrower.m in Sources */ = {isa = PBXBuildFile; fileRef = 962C10721D1100D500EE4ABB /* VCqueEsGrower.m */; };
 		962C10761D11010600EE4ABB /* VCperfil.m in Sources */ = {isa = PBXBuildFile; fileRef = 962C10751D11010600EE4ABB /* VCperfil.m */; };
+		962F89251D20FA78004C580F /* VCmenuHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 962F89241D20FA78004C580F /* VCmenuHeader.m */; };
 		963B7F871CFFC83F004DA987 /* Conexion.m in Sources */ = {isa = PBXBuildFile; fileRef = 963B7F861CFFC83F004DA987 /* Conexion.m */; };
 		9642C1191CFB76E000D80910 /* VClogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 9642C1181CFB76E000D80910 /* VClogin.m */; };
 		965E7D2E1D07EB2100B9D0F2 /* VCmenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 965E7D2D1D07EB2100B9D0F2 /* VCmenu.m */; };
@@ -92,6 +97,10 @@
 /* Begin PBXFileReference section */
 		961990021D0A616B00AE12DD /* celdaMeetups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = celdaMeetups.h; sourceTree = "<group>"; };
 		961990031D0A616B00AE12DD /* celdaMeetups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = celdaMeetups.m; sourceTree = "<group>"; };
+		961F1E381D14EB5E00EFCBFF /* VCidea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCidea.h; sourceTree = "<group>"; };
+		961F1E391D14EB5E00EFCBFF /* VCidea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCidea.m; sourceTree = "<group>"; };
+		961F1E3B1D14F12100EFCBFF /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		961F1E3D1D14F1E000EFCBFF /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		961F5EDF1D064D0D008E1373 /* VCrecordar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCrecordar.h; sourceTree = "<group>"; };
 		961F5EE01D064D0D008E1373 /* VCrecordar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCrecordar.m; sourceTree = "<group>"; };
 		961F5EE21D064D2B008E1373 /* VCregistrar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCregistrar.h; sourceTree = "<group>"; };
@@ -111,6 +120,8 @@
 		9621274B1D092B650059E561 /* VCterminos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCterminos.m; sourceTree = "<group>"; };
 		9621274D1D092BF20059E561 /* VCinsightsDescripcion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCinsightsDescripcion.h; sourceTree = "<group>"; };
 		9621274E1D092BF20059E561 /* VCinsightsDescripcion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCinsightsDescripcion.m; sourceTree = "<group>"; };
+		96251DD01D19D84E0038D2F8 /* Prueba.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prueba.h; sourceTree = "<group>"; };
+		96251DD11D19D84E0038D2F8 /* Prueba.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prueba.m; sourceTree = "<group>"; };
 		96285DAC1D0F81EC009BAAB7 /* VCmeetUpsContenidos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCmeetUpsContenidos.h; sourceTree = "<group>"; };
 		96285DAD1D0F81EC009BAAB7 /* VCmeetUpsContenidos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCmeetUpsContenidos.m; sourceTree = "<group>"; };
 		96285DAF1D0FAADF009BAAB7 /* celdaMeetContenidos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = celdaMeetContenidos.h; sourceTree = "<group>"; };
@@ -121,6 +132,8 @@
 		962C10721D1100D500EE4ABB /* VCqueEsGrower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCqueEsGrower.m; sourceTree = "<group>"; };
 		962C10741D11010600EE4ABB /* VCperfil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCperfil.h; sourceTree = "<group>"; };
 		962C10751D11010600EE4ABB /* VCperfil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCperfil.m; sourceTree = "<group>"; };
+		962F89231D20FA78004C580F /* VCmenuHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCmenuHeader.h; sourceTree = "<group>"; };
+		962F89241D20FA78004C580F /* VCmenuHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCmenuHeader.m; sourceTree = "<group>"; };
 		963B7F851CFFC83F004DA987 /* Conexion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conexion.h; sourceTree = "<group>"; };
 		963B7F861CFFC83F004DA987 /* Conexion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conexion.m; sourceTree = "<group>"; };
 		9642C1171CFB76E000D80910 /* VClogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VClogin.h; sourceTree = "<group>"; };
@@ -200,6 +213,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				961F1E3C1D14F12100EFCBFF /* AVKit.framework in Frameworks */,
+				961F1E3E1D14F1E000EFCBFF /* MediaPlayer.framework in Frameworks */,
 				9629A8FC1D12E63E005AA92B /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +231,17 @@
 				96285DB01D0FAADF009BAAB7 /* celdaMeetContenidos.m */,
 			);
 			name = Componentes;
+			sourceTree = "<group>";
+		};
+		961F1E371D14EB4800EFCBFF /* Idea */ = {
+			isa = PBXGroup;
+			children = (
+				961F1E381D14EB5E00EFCBFF /* VCidea.h */,
+				961F1E391D14EB5E00EFCBFF /* VCidea.m */,
+				96251DD01D19D84E0038D2F8 /* Prueba.h */,
+				96251DD11D19D84E0038D2F8 /* Prueba.m */,
+			);
+			name = Idea;
 			sourceTree = "<group>";
 		};
 		9622CEB31CFBC744003C9A35 /* Clases */ = {
@@ -325,6 +351,7 @@
 		9675A5201CF41A1E00937DFF /* Crower */ = {
 			isa = PBXGroup;
 			children = (
+				961F1E371D14EB4800EFCBFF /* Idea */,
 				961990011D0A613600AE12DD /* Componentes */,
 				9622CEB31CFBC744003C9A35 /* Clases */,
 				962FDA8E1CF5785200AD4205 /* images */,
@@ -389,6 +416,8 @@
 				965E7D2C1D07EB2100B9D0F2 /* VCmenu.h */,
 				965E7D2D1D07EB2100B9D0F2 /* VCmenu.m */,
 				9621274A1D092B650059E561 /* VCterminos.h */,
+				962F89231D20FA78004C580F /* VCmenuHeader.h */,
+				962F89241D20FA78004C580F /* VCmenuHeader.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -407,6 +436,8 @@
 		96B3D6C01D13577D008E22F0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				961F1E3D1D14F1E000EFCBFF /* MediaPlayer.framework */,
+				961F1E3B1D14F12100EFCBFF /* AVKit.framework */,
 				9629A8FB1D12E63E005AA92B /* MessageUI.framework */,
 			);
 			name = Frameworks;
@@ -443,6 +474,12 @@
 				TargetAttributes = {
 					9675A51D1CF41A1E00937DFF = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = ZEW85EH987;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -539,6 +576,7 @@
 				962127461D092A4F0059E561 /* VCaliados.m in Sources */,
 				962C10731D1100D500EE4ABB /* VCqueEsGrower.m in Sources */,
 				961F5EE11D064D0D008E1373 /* VCrecordar.m in Sources */,
+				962F89251D20FA78004C580F /* VCmenuHeader.m in Sources */,
 				9620AF821D05118D0016AB69 /* VCinicial.m in Sources */,
 				9675A5291CF41A1E00937DFF /* VCslider.m in Sources */,
 				9675A5261CF41A1E00937DFF /* AppDelegate.m in Sources */,
@@ -552,7 +590,9 @@
 				965E7D2E1D07EB2100B9D0F2 /* VCmenu.m in Sources */,
 				962C10761D11010600EE4ABB /* VCperfil.m in Sources */,
 				96B98E7D1D0E0EC0007DB674 /* VCvermeet.m in Sources */,
+				961F1E3A1D14EB5E00EFCBFF /* VCidea.m in Sources */,
 				962127431D092A180059E561 /* VCinsightsUp.m in Sources */,
+				96251DD21D19D84E0038D2F8 /* Prueba.m in Sources */,
 				963B7F871CFFC83F004DA987 /* Conexion.m in Sources */,
 				9642C1191CFB76E000D80910 /* VClogin.m in Sources */,
 				9621274C1D092B650059E561 /* VCterminos.m in Sources */,
@@ -671,11 +711,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Crower/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Carol.Crower;
+				PRODUCT_BUNDLE_IDENTIFIER = com.carolina.Crower;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -683,11 +726,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Crower/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Carol.Crower;
+				PRODUCT_BUNDLE_IDENTIFIER = com.carolina.Crower;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

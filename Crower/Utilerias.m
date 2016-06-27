@@ -33,6 +33,16 @@
     return alerta;
 }
 
+-(UIAlertController*)AlertaPreguntaCallback: (NSString *)Titulo MENSAJE: (NSString*) Mensaje CALLBACK:(void(^)(UIAlertAction *  action))Callback
+{
+    UIAlertController *alerta = [UIAlertController alertControllerWithTitle:Titulo message:Mensaje preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction * no = [UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction * aceptar = [UIAlertAction actionWithTitle:@"Si" style:UIAlertActionStyleDefault handler:Callback];
+    [alerta addAction:no];
+    [alerta addAction:aceptar];
+    return alerta;
+}
+
 
 -(UIImage*)DescargarImagen:(NSString*) RUTA
 {

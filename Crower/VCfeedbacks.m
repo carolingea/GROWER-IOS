@@ -22,7 +22,6 @@
     info = [[NSBundle mainBundle]infoDictionary];
     Util = [[Utilerias alloc]init];
     
-    
 }
 
 

@@ -19,11 +19,6 @@
     
     NSDictionary * info = [[NSBundle mainBundle] infoDictionary];
     NSLog(@"%@", [Util UrlCat]);
-    /*
-     NSDictionary *infoPlistDict = [[NSBundle mainBundle] infoDictionary];
-     NSString *version = infoPlistDict[@"CFBundleVersion"];
-     */
-    //NSLog(@"%@", [Conex ]);
     
 }
 
