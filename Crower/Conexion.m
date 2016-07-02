@@ -29,6 +29,8 @@ NSDictionary * result;
 -(void)iniciar: (NSString*)Pagina PARAMETROS: (NSString*)ParamGet
 {
     NSString * ruta = [NSString stringWithFormat:@"%@/%@?%@", URLbase, Pagina, ParamGet];
+    ruta = [ruta stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]; // Para los espacios
+    //[urlText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]
     URL = [NSURL URLWithString:ruta];
     REQUEST = [NSMutableURLRequest requestWithURL:URL];
     SESION = [NSURLSession sharedSession];
