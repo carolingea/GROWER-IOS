@@ -40,13 +40,7 @@ Conexion * Conex;
     //--- Cargar Loading ---------
     [_loading startAnimating];
     
-    
-    
     //--- Cargar imagen ----------
-    
-    
-    //_imgHeader.image = [Util DescargarImagen: [NSString stringWithFormat:@"http://45.56.120.97/php/io/img/categorias/%@", _Imagen]];
-    
     _imgHeader.image = [Util DescargarImagen: [NSString stringWithFormat:@"%@%@%@",info[@"URL"], info[@"URLcategorias"],_Imagen]];
     
     //---- Cargar Colección --------

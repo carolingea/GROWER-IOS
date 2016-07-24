@@ -108,6 +108,11 @@ VCmeetUpsContenidos * meetContenidos;
     
     NSString * rutaimagen = [NSString stringWithFormat:@"%@%@%@", info[@"URL"], info[@"URLcategoriasMini"], ColImagenes[indexPath.row]];
     Cel.imgMiniatura.image = [util DescargarImagen:rutaimagen];
+    
+    // CELDA REDONDEADA
+    Cel.imgMiniatura.layer.cornerRadius = Cel.imgMiniatura.frame.size.width/2;
+    Cel.imgMiniatura.layer.masksToBounds = YES;
+    
     [_loading stopAnimating];
     return Cel;
 }

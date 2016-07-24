@@ -20,19 +20,24 @@
 }
 
 - (IBAction)btnMeetUps:(id)sender {
-    VCmeetUps * controlador = [[VCmeetUps alloc]init];
+    /*VCmeetUps * controlador = [[VCmeetUps alloc]init];
     controlador = [self.storyboard instantiateViewControllerWithIdentifier:@"meetups"];
     [self presentViewController:controlador animated:YES completion:nil];
+     */
+    [self performSegueWithIdentifier:@"seq_menumeet" sender:self];
 }
 
 - (IBAction)btnInsights:(id)sender {
+    [self performSegueWithIdentifier:@"seq_menumeet" sender:self];
     
 }
 
 - (IBAction)btnVideos:(id)sender {
-    VCidea * controlador = [[VCidea alloc]init];
+    /*VCidea * controlador = [[VCidea alloc]init];
     controlador = [self.storyboard instantiateViewControllerWithIdentifier:@"vcidea"];
     [self presentViewController:controlador animated:YES completion:nil];
+     */
+    [self performSegueWithIdentifier:@"seq_menuvideo" sender:self];
 }
 
 - (IBAction)btnBuscar:(id)sender {
