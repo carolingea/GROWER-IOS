@@ -509,11 +509,11 @@
             <objects>
                 <viewController storyboardIdentifier="meetups" extendedLayoutIncludesOpaqueBars="YES" id="Qe2-0q-0gD" customClass="VCmeetUps" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dc2-pJ-ke1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" id="Npu-vX-cmV">
-                                <rect key="frame" x="0.0" y="284" width="320" height="284"/>
+                                <rect key="frame" x="0.0" y="284" width="320" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="048-Hl-BGN">
@@ -602,14 +602,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gf0-91-hY7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1091" y="2370"/>
+            <point key="canvasLocation" x="1091" y="2648"/>
         </scene>
         <!--Cvermeet-->
         <scene sceneID="8vI-lH-rtZ">
             <objects>
                 <viewController storyboardIdentifier="vermeet" id="S4H-oF-O1r" customClass="VCvermeet" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dyj-an-iVf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ima1.jpg" id="Y57-ge-Fb2">
@@ -644,7 +644,7 @@
                                 <color key="color" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" maximumZoomScale="5" editable="NO" text="hola mundo" selectable="NO" id="rno-Wr-0tk">
-                                <rect key="frame" x="15" y="244" width="291" height="314"/>
+                                <rect key="frame" x="15" y="244" width="291" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.76634623066666663" green="0.76634623066666663" blue="0.76634623066666663" alpha="1" colorSpace="calibratedRGB"/>
@@ -797,7 +797,7 @@
             <objects>
                 <viewController storyboardIdentifier="vcidea" title="Comparte idea" id="TmH-DP-EYh" customClass="VCidea" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S4t-Yj-CmH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="574"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Wf-BP-LdX">
@@ -873,7 +873,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zw5-5s-I1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="995" y="1621"/>
+            <point key="canvasLocation" x="1387" y="1388"/>
         </scene>
         <!--Cmis Ideas-->
         <scene sceneID="AXl-RV-F4Q">
@@ -952,7 +952,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LcB-6v-zIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1421" y="1618"/>
+            <point key="canvasLocation" x="1813" y="1662"/>
         </scene>
         <!--Cterminos-->
         <scene sceneID="YHl-6f-Sgk">
@@ -1018,11 +1018,11 @@
             <objects>
                 <viewController storyboardIdentifier="menuheader" id="HKg-u9-8QL" customClass="VCmenuHeader" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bOU-bs-f9L">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="98"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fondomorado.jpg" id="Z1u-gf-aGA">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="98"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ODu-YS-cqg">
@@ -1112,7 +1112,7 @@
             <objects>
                 <viewController storyboardIdentifier="meetcontenidos" id="fbX-7y-2YM" customClass="VCmeetUpsContenidos" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YFl-fZ-zlS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ima1.jpg" id="XXs-la-W0l">
@@ -1135,7 +1135,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="yyK-GU-Y2r">
-                                <rect key="frame" x="0.0" y="230" width="320" height="334"/>
+                                <rect key="frame" x="0.0" y="230" width="320" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="Pea-ax-cOz">
@@ -1257,7 +1257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kig-2M-hDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1843" y="1621"/>
+            <point key="canvasLocation" x="2201" y="1621"/>
         </scene>
         <!--Cfeedbacks-->
         <scene sceneID="6CV-Tg-1kd">
@@ -1352,7 +1352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZGQ-pB-ga4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2255" y="1618"/>
+            <point key="canvasLocation" x="2613" y="1618"/>
         </scene>
         <!--Cque Es Grower-->
         <scene sceneID="PHx-tW-9p0">
@@ -1397,7 +1397,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rae-Af-mOe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2607" y="1615"/>
+            <point key="canvasLocation" x="2965" y="1615"/>
         </scene>
         <!--Cperfil-->
         <scene sceneID="1Bw-QD-nm0">
@@ -1442,7 +1442,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Li1-3B-QbQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2973" y="1621"/>
+            <point key="canvasLocation" x="3331" y="1621"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="geS-eF-tI3">
@@ -1512,7 +1512,7 @@
         <segue reference="oTv-7J-gGQ"/>
         <segue reference="7Pg-S7-ZAk"/>
         <segue reference="AyW-lq-kTu"/>
-        <segue reference="qpc-zq-du2"/>
+        <segue reference="j1B-RZ-hGA"/>
         <segue reference="M29-Jy-LnI"/>
     </inferredMetricsTieBreakers>
 </document>
