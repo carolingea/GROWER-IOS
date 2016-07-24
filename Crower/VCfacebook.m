@@ -18,6 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    [[UINavigationBar appearance]setBarTintColor:[UIColor colorWithRed:0.718 green:0.136 blue:1.000 alpha:1.000]];
     conex = [[Conexion alloc]init];
     
     FBSDKLoginButton * boton = [[FBSDKLoginButton alloc]init];
@@ -57,7 +60,6 @@
 
 -(void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error
 {
-    NSLog(@"%@",[NSString stringWithFormat:@"@%", result.isCancelled]);
     if (result.isCancelled) {
         NSLog(@"Cancelado");
         [_btnIngresarConFaceOutlet setHidden:YES];
@@ -70,34 +72,36 @@
     else // Logueado todo bien!
     {
         [_btnIngresarConFaceOutlet setHidden:NO];
-        /*
-        VCslider * slider = [[VCslider alloc]init];
+        
+        /*VCslider * slider = [[VCslider alloc]init];
         slider = [self.storyboard instantiateViewControllerWithIdentifier:@"slider"];
         [self presentViewController:slider animated:YES completion:nil];
          */
+        
     }
     
 }
 
 - (IBAction)btnIngresarConFace:(id)sender {
-    /*
-    VCslider * slider = [[VCslider alloc]init];
+    
+    /*VCslider * slider = [[VCslider alloc]init];
     slider = [self.storyboard instantiateViewControllerWithIdentifier:@"slider"];
-    [self presentViewController:slider animated:YES completion:nil];
-     */
+    [self presentViewController:slider animated:YES completion:nil];*/
+    
     [self registroFace];
+    [self performSegueWithIdentifier:@"seg_slider" sender:self];
 }
 
 - (IBAction)btnIniciarCorreo:(id)sender {
-    VClogin * login = [[VClogin alloc]init];
+    /*VClogin * login = [[VClogin alloc]init];
     login = [self.storyboard instantiateViewControllerWithIdentifier:@"login"];
     [self showViewController:login sender:nil];
+    */
+    [self performSegueWithIdentifier:@"seg_correo" sender:self];
 }
 
 - (IBAction)btnRegistrarse:(id)sender {
-    VCregistrar * registrar = [[VCregistrar alloc]init];
-    registrar = [self.storyboard instantiateViewControllerWithIdentifier:@"registrarse"];
-    [self showViewController:registrar sender:nil];
+    [self performSegueWithIdentifier:@"seg_registrar" sender:self];
 }
 
 -(void)registroFace
@@ -119,7 +123,6 @@
                     NSLog(@"%@",respuesta);
                     // Guardar sesión
                     [[NSUserDefaults standardUserDefaults]setObject:[respuesta objectForKey:@"Id_usuario"] forKey:@"Id_usuario"];
-                    
                 }
                 else{
                     NSLog(@"Pailas!");

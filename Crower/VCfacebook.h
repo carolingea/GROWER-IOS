@@ -7,8 +7,7 @@
 #import <FBSDKShareKit/FBSDKShareKit.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
-@interface VCfacebook : UIViewController<FBSDKLoginButtonDelegate, FBSDKSharingDelegate, FBSDKLoginTooltipViewDelegate, FBSDKGraphRequestConnectionDelegate, FBSDKAppInviteDialogDelegate>
-
+@interface VCfacebook : UIViewController<FBSDKLoginButtonDelegate, FBSDKLoginTooltipViewDelegate, FBSDKGraphRequestConnectionDelegate, FBSDKAppInviteDialogDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *viewBotonFace;
 @property (weak, nonatomic) IBOutlet UIButton *btnIngresarConFaceOutlet;

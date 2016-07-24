@@ -40,7 +40,11 @@ Conexion * Conex;
     //--- Cargar Loading ---------
     [_loading startAnimating];
     
+    
+    
     //--- Cargar imagen ----------
+    
+    
     //_imgHeader.image = [Util DescargarImagen: [NSString stringWithFormat:@"http://45.56.120.97/php/io/img/categorias/%@", _Imagen]];
     
     _imgHeader.image = [Util DescargarImagen: [NSString stringWithFormat:@"%@%@%@",info[@"URL"], info[@"URLcategorias"],_Imagen]];
@@ -53,7 +57,6 @@ Conexion * Conex;
             ArrID = [Contenidos mutableArrayValueForKey:@"Id_contenido"];
             ArrTitulo = [Contenidos mutableArrayValueForKey:@"Titulo"];
             ArrImagenes = [Contenidos mutableArrayValueForKey:@"Imagen"];
-            //ArrDescripcion = [Contenidos mutableArrayValueForKey:@"Descripcion"];
             [_ColContenidos reloadData];
             [_ColContenidos reloadInputViews];
         });
@@ -83,25 +86,41 @@ Conexion * Conex;
 {
     Celda = [collectionView dequeueReusableCellWithReuseIdentifier:@"celda" forIndexPath:indexPath];
     Celda.lblTituloContenido.text = ArrTitulo[indexPath.row];
-    //Celda.imgContenido.image = [Util DescargarImagen:[NSString stringWithFormat:@"http://45.56.120.97/php/io/img/contenidos/mini/%@", ArrImagenes[indexPath.row]]];
+    
+    
+    // IMAGEN REDONDEADA
+    Celda.imgContenido.layer.cornerRadius = Celda.imgContenido.frame.size.width/2;
+    Celda.imgContenido.layer.masksToBounds = YES;
+    
+    // CARGAR INFO IMAGEN
     Celda.imgContenido.image = [Util DescargarImagen:[NSString stringWithFormat:@"%@%@%@",info[@"URL"], info[@"URLcontenidosMini"], ArrImagenes[indexPath.row]]];
-    //[Util DescargarImagen: [NSString stringWithFormat:@"%@%@%@",info[@"URL"], info[@"URLcategorias"],_Imagen]];
     [_loading stopAnimating];
     return Celda;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    /*
     vermeet = [self.storyboard instantiateViewControllerWithIdentifier:@"vermeet"];
     vermeet.ID = ArrID[indexPath.row];
     vermeet.Titulo = ArrTitulo[indexPath.row];
     vermeet.Imagen = ArrImagenes[indexPath.row];
-    [self presentViewController:vermeet animated:YES completion:^{
-        
-    }];
-    //NSLog(@"%ld", (long)indexPath.row);
+    [self presentViewController:vermeet animated:YES completion:nil];
+    */
+    [self performSegueWithIdentifier:@"seq_contmeet" sender:indexPath];
+    [_loading stopAnimating];
     
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath * pos = (NSIndexPath *) sender;
+    if ([[segue identifier] isEqualToString:@"seq_contmeet"]) {
+        vermeet = [segue destinationViewController];
+        vermeet.ID = ArrID[pos.row];
+        vermeet.Titulo = ArrTitulo[pos.row];
+        vermeet.Imagen = ArrImagenes[pos.row];
+    }
 }
 
 @end

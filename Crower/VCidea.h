@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIProgressView *ProgresoSubida;
 - (IBAction)btnObtenerGaleria:(id)sender;
 - (IBAction)btnGrabarIdea:(id)sender;
+- (IBAction)btnVerMisIdeas:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *imaTemp;
 
 @end

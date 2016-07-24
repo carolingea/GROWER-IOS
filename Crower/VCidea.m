@@ -1,7 +1,7 @@
 
 #import "VCidea.h"
 #import "Utilerias.h"
-
+#import "VCmisIdeas.h"
 @interface VCidea ()
 
 @end
@@ -11,7 +11,10 @@
     Utilerias * Util;
     UIImagePickerController * PICKER;
     NSDictionary * informacion;
+    NSString * Id_usuario;
     float total;
+    
+    
 }
 
 - (void)viewDidLoad {
@@ -21,6 +24,10 @@
     PICKER.delegate = self;
     informacion = [[NSBundle mainBundle]infoDictionary];
     Util = [[Utilerias alloc]init];
+    
+    // DATOS DE USUARIO
+    Id_usuario = [[NSUserDefaults standardUserDefaults]valueForKey:@"Id_usuario"];
+    NSLog(@"%@",Id_usuario);
     
 }
 
@@ -38,6 +45,14 @@
     PICKER.editing = NO;
     [PICKER setModalPresentationStyle:UIModalPresentationPageSheet];
     [self presentViewController:PICKER animated:YES completion:nil];
+    
+}
+
+- (IBAction)btnVerMisIdeas:(id)sender {
+    //VCmisIdeas * misideas = [[VCmisIdeas alloc]init];
+    //misideas = [self.storyboard instantiateViewControllerWithIdentifier:@"misIdeas"];
+    //[self presentViewController:misideas animated:YES completion:nil];
+    [self performSegueWithIdentifier:@"seg_misideas" sender:self];
     
 }
 
@@ -65,10 +80,8 @@
     }
     else
     {
-        
-        
+        NSLog(@"Pailas!");
     }
-    
 }
 
 
@@ -83,7 +96,7 @@
             NSURL * UrlArchivo = Ruta;
             NSString * archivo = [UrlArchivo lastPathComponent];
             NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-            [request setURL:[NSURL URLWithString: [NSString stringWithFormat: @"%@/ideas.php",informacion[@"URL"]]]];
+            [request setURL:[NSURL URLWithString: [NSString stringWithFormat: @"%@/ideas.php?Id_usuario=%@",informacion[@"URL"], Id_usuario]]];
             [request setHTTPMethod:@"POST"];
             NSString *boundary = @"---------------------------14737809831466499882746641449";
             NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];

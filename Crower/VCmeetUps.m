@@ -56,7 +56,6 @@ VCmeetUpsContenidos * meetContenidos;
     _ScrollSlider.delegate = self;
     NSLog(@"%@",RutaCategoria);
     //---------Traer datos servicio Json ---http://45.56.120.97/php/io/utilerias.php?op=LISTAR_ARCHIVOS&carpeta=img/slider
-    //[conex conectar:@"utilerias.php" PARAMETROS:@"op=LISTAR_ARCHIVOS&carpeta=img/slider" CALLBACK:^(NSData *data, NSURLResponse *response, NSError *error) {
     [conex conectar:@"utilerias.php" PARAMETROS:@"op=LISTAR_ARCHIVOS&carpeta=back/web/img/slider" CALLBACK:^(NSData *data, NSURLResponse *response, NSError *error) {
         dispatch_sync(dispatch_get_main_queue(), ^{
             __block NSDictionary * d = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
@@ -81,7 +80,6 @@ VCmeetUpsContenidos * meetContenidos;
         
         UIImageView * IMAVIEW = [[UIImageView alloc]initWithFrame:CGRectMake(DX, Y, Ancho, Alto)];
         
-//        NSString*URL = [NSString stringWithFormat:@"http://45.56.120.97/php/io/img/slider/%@", [Imagenes objectAtIndex:i]];
         NSString*URL = [NSString stringWithFormat:@"%@%@%@", info[@"URL"], info[@"URLslider"], [Imagenes objectAtIndex:i]];
         IMAVIEW.image = [util DescargarImagen:URL];
         [_ScrollSlider addSubview:IMAVIEW];
@@ -107,7 +105,7 @@ VCmeetUpsContenidos * meetContenidos;
 {
     Cel  = [collectionView dequeueReusableCellWithReuseIdentifier:@"micelda" forIndexPath:indexPath];
     Cel.lblTitulo.text = Coltextos[indexPath.row];
-    //NSString * rutaimagen =[NSString stringWithFormat:@"http://45.56.120.97/php/io/img/categorias/mini/%@", ColImagenes[indexPath.row]];
+    
     NSString * rutaimagen = [NSString stringWithFormat:@"%@%@%@", info[@"URL"], info[@"URLcategoriasMini"], ColImagenes[indexPath.row]];
     Cel.imgMiniatura.image = [util DescargarImagen:rutaimagen];
     [_loading stopAnimating];
@@ -123,20 +121,42 @@ VCmeetUpsContenidos * meetContenidos;
     });
     
     dispatch_async(dispatch_get_main_queue(), ^{
+       /*
         meetContenidos = [self.storyboard instantiateViewControllerWithIdentifier:@"meetcontenidos"];
         meetContenidos.Titulo = Coltextos[indexPath.row];
         meetContenidos.ID = ColID[indexPath.row];
         meetContenidos.Imagen = ColImagenes[indexPath.row];
         meetContenidos.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        
         [self presentViewController:meetContenidos animated:YES completion:^{
+         
             [_loading stopAnimating];
         }];
-    
-        
+        */
+        [self performSegueWithIdentifier:@"seq_catmeet" sender:indexPath];
+        [_loading stopAnimating];
     });
     
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"seq_catmeet"]) {
+        NSIndexPath * pos = (NSIndexPath*)sender;
+        VCmeetUpsContenidos * meetContenidos;
+        meetContenidos = [segue destinationViewController];
+        meetContenidos.Titulo = Coltextos[pos.row];
+        meetContenidos.ID = ColID[pos.row];
+        meetContenidos.Imagen = ColImagenes[pos.row];
+        meetContenidos.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    }
     
-    
+    /*
+     vcVista2 * destino = [segue destinationViewController];
+     
+     if ([[segue identifier] isEqualToString:@"ir"]) {
+     destino.Mensaje = @"Saludos terricolas";
+     }*/
 }
 
 

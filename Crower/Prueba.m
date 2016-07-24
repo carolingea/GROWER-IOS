@@ -7,41 +7,55 @@
 @end
 
 @implementation Prueba{
-    __block PHObjectPlaceholder *placeholder;
+    NSArray * valores;
+    NSArray * filtrado;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    Piker = [[UIImagePickerController alloc]init];
-    Piker.delegate = self;
+    _tabla.delegate = self;
+    _BarraBuscar.delegate = self;
+    valores = [NSArray arrayWithObjects:@"Uno", @"Dos", @"Tres", @"Cuatro", @"Cinco", nil];
+    
 }
 
 
-- (IBAction)btnPrueba1:(id)sender {
-    Piker.mediaTypes = [[NSArray alloc]initWithObjects:@"public.movie",@"public.image", nil];
-    Piker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-    [self presentViewController:Piker animated:YES completion:nil];
-}
-
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-     NSURL * ReferenciaURL = [info objectForKey:UIImagePickerControllerReferenceURL];
-     PHFetchResult *result = [PHAsset fetchAssetsWithALAssetURLs:@[ReferenciaURL] options:nil];
-     PHAsset * Asset = result.firstObject;
-     PHImageManager *manager = [PHImageManager defaultManager];
-    
-     [manager requestAVAssetForVideo:Asset options:nil resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable infoasset) {
-         NSLog(@"%@", ((AVURLAsset*)asset).URL);
-     }];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
+    if (tableView == self.tabla) {
+        return valores.count;
+    }
+    else
+    {
+        [self Filtrar:_BarraBuscar.text];
+        return filtrado.count;
+    }
 }
 
--(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    UITableViewCell * celda = [[UITableViewCell alloc]init];
+    celda = [tableView dequeueReusableCellWithIdentifier:@"celda"];
+    
+    if (celda ==nil) {
+        celda = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"celda"];
+    }
+    
+    if (tableView == self.tabla) {
+        
+        celda.textLabel.text = valores[indexPath.row];
+    }
+    else
+    {
+        celda.textLabel.text = filtrado[indexPath.row];
+    }
+    return celda;
 }
 
+-(void)Filtrar: (NSString*) Buscar
+{
+    NSPredicate * Predicado = [NSPredicate predicateWithFormat:@"SELF contains [search] %@", Buscar];
+    filtrado = [[valores filteredArrayUsingPredicate:Predicado]mutableCopy];
+}
 
 @end

@@ -56,7 +56,6 @@
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
-    CGFloat nuevoY = _viewLogin.frame.origin.y - TecladoHeight;
     [self DesplazarTeclado:Y/2];
     return YES;
 }
@@ -77,18 +76,25 @@
     if (![_txtUsuario.text isEqualToString:@""] &&  ![_txtPassword.text isEqualToString:@""]) {
         NSString * Parametros = [NSString stringWithFormat:@"op=verificar&usuario=%@&password=%@", _txtUsuario.text, _txtPassword.text];
         [conex conectar:@"Usuarios.php" PARAMETROS:Parametros CALLBACK:^(NSData *data, NSURLResponse *response, NSError *error) {
-            dispatch_async(dispatch_get_main_queue(), ^{  // Cuando termine el callback haga lo del bloque
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
                 NSDictionary * res = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                NSLog(@"%@",res);
                 if (res.count > 0) {
-                    if ([[res valueForKey:@"Num"][0] intValue] > 0) {    // Si trae algo
-                        VCslider * slider = [self.storyboard instantiateViewControllerWithIdentifier:@"slider"];
-                        [self presentViewController:slider animated:YES completion:nil];
+                    if ([[res valueForKey:@"Num"][0] intValue] > 0) {
+                        // Si trae algo
+                        //VCslider * slider = [self.storyboard instantiateViewControllerWithIdentifier:@"slider"];
+                        //[self presentViewController:slider animated:YES completion:^{
+                        [[NSUserDefaults standardUserDefaults]setObject:[res valueForKey:@"Num"][0] forKey:@"Id_usuario"];
+                        
+                        [self performSegueWithIdentifier:@"seg_slider" sender:self];
+                            
+                        //}];
                     }
                     else
                     {
                         UIAlertController * Alerta = [Util AlertaSimple:@"Ingreso" MENSAJE:@"Usuario o contraseña errónea"];
                         [self presentViewController:Alerta animated:YES completion:nil];
-                        
                     }
                 }
             });
@@ -100,18 +106,20 @@
         UIAlertController * Alerta = [Util AlertaSimple:@"Ingreso" MENSAJE:@"Escriba usuario y contraseña"];
         [self presentViewController:Alerta animated:YES completion:nil];
     }
-    
-    
 }
 
 - (IBAction)btnRecordar:(id)sender {
-    recordar = [self.storyboard instantiateViewControllerWithIdentifier:@"recordar"];
+    /*recordar = [self.storyboard instantiateViewControllerWithIdentifier:@"recordar"];
     [self showViewController:recordar sender:nil];
+     */
+    [self performSegueWithIdentifier:@"seg_recordar" sender:self];
 }
 
 - (IBAction)btnRegistrar:(id)sender {
-    registrar = [self.storyboard instantiateViewControllerWithIdentifier:@"registrarse"];
-    [self showViewController:registrar sender:nil];
+    /*registrar = [self.storyboard instantiateViewControllerWithIdentifier:@"registrarse"];
+    [self showViewController:registrar sender:nil];*/
+    [self performSegueWithIdentifier:@"seg_registrar2" sender:self];
+    
 }
 
 - (IBAction)btnMostrarPassword:(id)sender {
