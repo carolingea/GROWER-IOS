@@ -92,23 +92,30 @@
         
         _ProgresoSubida.hidden = NO;
         
-        /*********** GENERAR NOMBRE ARCHIVO *************/
         
+        /*********** GENERAR NOMBRE ARCHIVO *************/
+        NSString * Nombre =[Util generarNombre:@""];
+        NSString * VideoNombre = [NSString stringWithFormat:@"%@.%@", Nombre, [Ruta pathExtension]];
+        NSString * MiniaturaNombre = [NSString stringWithFormat:@"%@.%@", Nombre, @"jpg"];
         
         /*************** MINIATURA ***************/
         NSData * imaData = UIImageJPEGRepresentation([UIImage imageWithCGImage:mini], 0.8);
-        [self guardarArchivo:@"archivo.jpg" Datos:imaData CALLBACK:^{
+        [self guardarArchivo: MiniaturaNombre Datos:imaData CALLBACK:^{
             NSLog(@"Terminado de subir MINIATURA");
+            
+            /************ ARCHIVO ********************/
+            //NSURL * UrlArchivo = (NSURL*)Ruta;
+            //NSString * archivo = [UrlArchivo lastPathComponent];
+            NSLog(@"%@",[Ruta pathExtension] );
+            
+            NSData * datos = [NSData dataWithContentsOfFile:Ruta];
+            [self guardarArchivo:VideoNombre Datos:datos CALLBACK:^{
+                NSLog(@"%@",@"Terminada de subir VIDEO");
+                // GUARDAR EN LA BASE DE DATOS
+            }];
         }];
         
-        /************ ARCHIVO ********************/
-        NSURL * UrlArchivo = Ruta;
-        //NSString * archivo = [UrlArchivo lastPathComponent];
-        NSString * archivo = @"video.mov";
-        NSData * datos = [NSData dataWithContentsOfFile:Ruta];
-        [self guardarArchivo:archivo Datos:datos CALLBACK:^{
-            NSLog(@"%@",@"Terminada de subir VIDEO");
-        }];
+        
         /********************************/
         
         
