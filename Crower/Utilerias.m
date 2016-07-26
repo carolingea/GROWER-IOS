@@ -61,4 +61,13 @@
     return IMA;
 }
 
+
+- (NSString *)generarNombre: (NSString*) Extension
+{
+    NSDateFormatter * dateFormat = [[NSDateFormatter alloc] init];
+    dateFormat.dateFormat = @"yMMddHHmmssSSSSS";
+    NSString * archivofinal = [NSString stringWithFormat:@"%@%@",[dateFormat stringFromDate:[NSDate date]], Extension];
+    return archivofinal;
+}
+
 @end

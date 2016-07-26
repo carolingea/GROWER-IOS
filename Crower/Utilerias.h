@@ -19,6 +19,7 @@
 
 -(UIImage*)DescargarImagenNombre:(NSString*) NOMBRE;
 
+- (NSString *)generarNombre: (NSString*) Extension;
 
 @end
 

@@ -44,8 +44,12 @@
 }
 
 - (IBAction)btnPerfil:(id)sender {
-    VCmenu * controlador = [[VCmenu alloc]init];
+    
+    /*VCmenu * controlador = [[VCmenu alloc]init];
     controlador = [self.storyboard instantiateViewControllerWithIdentifier:@"vcmenu"];
     [self presentViewController:controlador animated:YES completion:nil];
+    */
+    [self performSegueWithIdentifier:@"seg_menumorado" sender:self];
+    
 }
 @end

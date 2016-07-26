@@ -17,6 +17,6 @@
 - (IBAction)btnObtenerGaleria:(id)sender;
 - (IBAction)btnGrabarIdea:(id)sender;
 - (IBAction)btnVerMisIdeas:(id)sender;
-@property (weak, nonatomic) IBOutlet UIImageView *imaTemp;
+@property (weak, nonatomic) IBOutlet UIImageView *imgminiatura;
 
 @end

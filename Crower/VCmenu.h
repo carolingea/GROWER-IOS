@@ -9,5 +9,4 @@
 - (IBAction)btnAliados:(id)sender;
 - (IBAction)btnFeedback:(id)sender;
 - (IBAction)btnTerminosCondiciones:(id)sender;
-
 @end
