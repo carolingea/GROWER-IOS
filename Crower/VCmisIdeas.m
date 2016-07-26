@@ -37,7 +37,8 @@
     conex = [[Conexion alloc]init];
     info = [[NSBundle mainBundle]infoDictionary];
 
-    Id_usuario = [[NSUserDefaults standardUserDefaults]valueForKey:@"Id_usuario"];
+//    Id_usuario = [[NSUserDefaults standardUserDefaults]valueForKey:@"Id_usuario"];
+    Id_usuario = @"1";
     NSString * parametros = [NSString stringWithFormat:@"op=veridea&Id_usuario=%@", Id_usuario];
     [conex conectar:@"VerIdeas.php" PARAMETROS:parametros CALLBACK:^(NSData *data, NSURLResponse *response, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -63,16 +64,16 @@
     NSString * URLidea = [NSString stringWithFormat:@"%@%@%@", [info valueForKey:@"URL"],[info valueForKey:@"URLidea"], [ideas valueForKey:@"Idea"][indexPath.row]];
     
     /************ GENERAR MINIATURA VIDEO ***************/
-    NSURL * urlidea = [[NSURL alloc]initWithString:URLidea];
-    AVURLAsset * Asset = [[AVURLAsset alloc]initWithURL:urlidea options:nil];
-    AVAssetImageGenerator * generador = [[AVAssetImageGenerator alloc]initWithAsset:Asset];
-    generador.appliesPreferredTrackTransform = YES;
-    CMTime MiniTiempo = CMTimeMake(1, 60);
-    generador.maximumSize = CGSizeMake(50,50);
-    CGImageRef imgRef = [generador copyCGImageAtTime:MiniTiempo actualTime:nil error:nil];
+//    NSURL * urlidea = [[NSURL alloc]initWithString:URLidea];
+//    AVURLAsset * Asset = [[AVURLAsset alloc]initWithURL:urlidea options:nil];
+//    AVAssetImageGenerator * generador = [[AVAssetImageGenerator alloc]initWithAsset:Asset];
+//    generador.appliesPreferredTrackTransform = YES;
+//    CMTime MiniTiempo = CMTimeMake(1, 60);
+//    generador.maximumSize = CGSizeMake(50,50);
+//    CGImageRef imgRef = [generador copyCGImageAtTime:MiniTiempo actualTime:nil error:nil];
     /***************************************************/
     
-    celda.imgMini.image = [UIImage imageWithCGImage:imgRef];
+    //celda.imgMini.image = [UIImage imageWithCGImage:imgRef];
     celda.NombreVideo = URLidea;
     
     return celda;
