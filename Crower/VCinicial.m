@@ -13,7 +13,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (IBAction)btnCamara:(id)sender {

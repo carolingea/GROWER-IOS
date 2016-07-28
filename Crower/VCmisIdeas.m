@@ -37,12 +37,13 @@
     conex = [[Conexion alloc]init];
     info = [[NSBundle mainBundle]infoDictionary];
 
-//    Id_usuario = [[NSUserDefaults standardUserDefaults]valueForKey:@"Id_usuario"];
-    Id_usuario = @"1";
+    Id_usuario = [[NSUserDefaults standardUserDefaults]valueForKey:@"Id_usuario"];
+    //Id_usuario = @"1";
     NSString * parametros = [NSString stringWithFormat:@"op=veridea&Id_usuario=%@", Id_usuario];
     [conex conectar:@"VerIdeas.php" PARAMETROS:parametros CALLBACK:^(NSData *data, NSURLResponse *response, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             ideas = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSLog(@"%@",ideas);
             [_tablaIdeas reloadData];
             [_tablaIdeas reloadInputViews];
             [_Loading stopAnimating];
@@ -61,7 +62,14 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     celda = [collectionView dequeueReusableCellWithReuseIdentifier:@"celdamisideas" forIndexPath:indexPath];
+    
     NSString * URLidea = [NSString stringWithFormat:@"%@%@%@", [info valueForKey:@"URL"],[info valueForKey:@"URLidea"], [ideas valueForKey:@"Idea"][indexPath.row]];
+    
+    NSString * URLmini = [NSString stringWithFormat:@"%@%@%@", [info valueForKey:@"URL"],[info valueForKey:@"URLidea"], [ideas valueForKey:@"Mini"][indexPath.row]];
+    
+    celda.imgMini.image = [util DescargarImagen:URLmini];
+        //celda.imgMini.image = [UIImage imageWithCGImage:imgRef];
+    
     
     /************ GENERAR MINIATURA VIDEO ***************/
 //    NSURL * urlidea = [[NSURL alloc]initWithString:URLidea];

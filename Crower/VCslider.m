@@ -14,6 +14,8 @@
     _svSlider.delegate = self;
     [_viewLogin setHidden:YES];
     
+    self.navigationController.navigationBar.hidden = YES;
+    
     NSArray * imagenes = [[NSArray alloc]initWithObjects:@"slide1.jpg",@"slide2.jpg",@"slide3.jpg", @"LOGIN", nil];
     
     _pageSlider.numberOfPages = [imagenes count];

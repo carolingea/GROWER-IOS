@@ -30,6 +30,8 @@ VCmeetUpsContenidos * meetContenidos;
     conex = [[Conexion alloc]init];
     util = [[Utilerias alloc]init];
     
+    self.navigationController.navigationBar.hidden = NO;
+    
     //---- TRAER RUTAS DE LAS CARPETAS DEL info.plist
     
     info = [[NSBundle mainBundle]infoDictionary];

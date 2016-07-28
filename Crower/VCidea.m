@@ -2,6 +2,8 @@
 #import "VCidea.h"
 #import "Utilerias.h"
 #import "VCmisIdeas.h"
+#import "Conexion.h"
+
 @interface VCidea ()
 
 @end
@@ -9,6 +11,7 @@
 @implementation VCidea
 {
     Utilerias * Util;
+    Conexion * conex;
     UIImagePickerController * PICKER;
     NSDictionary * informacion;
     NSString * Id_usuario;
@@ -23,19 +26,13 @@
     PICKER.delegate = self;
     informacion = [[NSBundle mainBundle]infoDictionary];
     Util = [[Utilerias alloc]init];
+    conex = [[Conexion alloc]init];
+    self.navigationController.navigationBar.hidden = NO;
     
     // DATOS DE USUARIO
-    //Id_usuario = [[NSUserDefaults standardUserDefaults]valueForKey:@"Id_usuario"];
-    Id_usuario =@"1";
-    
+    Id_usuario = [[NSUserDefaults standardUserDefaults]valueForKey:@"Id_usuario"];
+    //Id_usuario =@"1";
 }
-//- (NSString *)generarNombre: (NSString*) Extension
-//{
-//    NSDateFormatter * dateFormat = [[NSDateFormatter alloc] init];
-//    dateFormat.dateFormat = @"yMMddHHmmssSSSSS";
-//    NSString * archivofinal = [NSString stringWithFormat:@"%@%@",[dateFormat stringFromDate:[NSDate date]], Extension];
-//    return archivofinal;
-//}
 
 -(void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didSendBodyData:(int64_t)bytesSent totalBytesSent:(int64_t)totalBytesSent totalBytesExpectedToSend:(int64_t)totalBytesExpectedToSend
 {
@@ -98,6 +95,9 @@
         NSString * VideoNombre = [NSString stringWithFormat:@"%@.%@", Nombre, [Ruta pathExtension]];
         NSString * MiniaturaNombre = [NSString stringWithFormat:@"%@.%@", Nombre, @"jpg"];
         
+        
+        
+        
         /*************** MINIATURA ***************/
         NSData * imaData = UIImageJPEGRepresentation([UIImage imageWithCGImage:mini], 0.8);
         [self guardarArchivo: MiniaturaNombre Datos:imaData CALLBACK:^{
@@ -111,7 +111,15 @@
             NSData * datos = [NSData dataWithContentsOfFile:Ruta];
             [self guardarArchivo:VideoNombre Datos:datos CALLBACK:^{
                 NSLog(@"%@",@"Terminada de subir VIDEO");
-                // GUARDAR EN LA BASE DE DATOS
+                /*********** GUARDAR EN LA BASE DE DATOS *************/
+                NSString * PARAMS = [NSString stringWithFormat:@"op=guardaridea&Id_usuario=%@&Mini=%@&Idea=%@", Id_usuario, MiniaturaNombre, VideoNombre];
+                
+                [conex conectar:@"VerIdeas.php" PARAMETROS:PARAMS CALLBACK:^(NSData *data, NSURLResponse *response, NSError *error) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        NSLog(@"%@",@"GUARDADO EN LA BD");
+                    });
+                }];
+                
             }];
         }];
         
